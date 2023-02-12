@@ -1,0 +1,39 @@
+<html>
+<head>
+  <title>Prime Number Checker</title>
+</head>
+<body>
+  <h1>Prime Number Checker</h1>
+  <input type="text" id="numberInput" />
+  <button id="checkButton">Check</button>
+  <p id="result"></p>
+
+  <script>
+    const checkButton = document.querySelector("#checkButton");
+    const numberInput = document.querySelector("#numberInput");
+    const result = document.querySelector("#result");
+
+    checkButton.addEventListener("click", function() {
+      let number = parseInt(numberInput.value);
+      let isPrime = true;
+      
+      if (number <= 1) {
+        isPrime = false;
+      } else {
+        for (let i = 2; i < number; i++) {
+          if (number % i === 0) {
+            isPrime = false;
+            break;
+          }
+        }
+      }
+
+      if (isPrime) {
+        result.innerHTML = `${number} is a prime number.`;
+      } else {
+        result.innerHTML = `${number} is not a prime number.`;
+      }
+    });
+  </script>
+</body>
+</html>

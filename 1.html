@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Information Display</title>
+  </head>
+  <body>
+    <form id="myForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name"><br><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email"><br><br>
+      <label for="mobile">Mobile No:</label>
+      <input type="text" id="mobile" name="mobile"><br><br>
+      <label for="gender">Gender:</label>
+      <input type="radio" id="male" name="gender" value="male">
+      <label for="male">Male</label>
+      <input type="radio" id="female" name="gender" value="female">
+      <label for="female">Female</label><br><br>
+      <label for="color">Favorite Color:</label>
+      <select id="color" name="color">
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="yellow">Yellow</option>
+      </select><br><br>
+      <button type="button" onclick="displayInformation()">Submit</button>
+    </form>
+    <br><br>
+    <textarea id="result" rows="5" cols="30" readonly></textarea>
+  </body>
+  <script>
+    function displayInformation() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var mobile = document.getElementById("mobile").value;
+      var gender = document.querySelector('input[name="gender"]:checked').value;
+      var color = document.getElementById("color").value;
+      document.getElementById("result").value =
+        "Name: " +name +
+        "\nEmail: " +email +
+        "\nMobile No: " + mobile +
+        "\nGender: " + gender +
+        "\nFavorite Color: " +color;
+    }
+  </script>
+</html>
